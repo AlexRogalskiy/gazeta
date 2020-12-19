@@ -1,0 +1,342 @@
+@charset "utf-8";
+
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '~@fortawesome/fontawesome-free/scss/solid.scss';
+@import '~@fortawesome/fontawesome-free/scss/brands.scss';
+
+$bgbl-1: #036556;
+$bgbl-2: #1ba0ab;
+$bgbl-3: #00e7eb;
+
+$highlight: hsl(48, 100%, 67%);
+
+$primary: $bgbl-1;
+$secondary: $bgbl-2;
+// $link: $pink;
+
+// Import only what you need from Bulma
+@import '~bulma/sass/utilities/_all.sass';
+
+$navbar-breakpoint: $tablet !default;
+
+@import '~bulma/sass/base/_all.sass';
+@import '~bulma/sass/grid/columns.sass';
+
+@import '~bulma/sass/components/navbar.sass';
+@import '~bulma/sass/components/card.sass';
+@import '~bulma/sass/components/menu.sass';
+
+@import '~bulma/sass/layout/_all.sass';
+
+@import '~bulma/sass/elements/button.sass';
+@import '~bulma/sass/elements/container.sass';
+@import '~bulma/sass/elements/form.sass';
+@import '~bulma/sass/elements/title.sass';
+@import '~bulma/sass/elements/table.sass';
+@import '~bulma/sass/elements/content.sass';
+@import '~bulma/sass/elements/box.sass';
+@import '~bulma/sass/elements/icon.sass';
+
+@media screen and (min-width: $tablet) {
+  .navbar > .container {
+    align-items: stretch;
+    display: flex;
+    min-height: 3.25rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 $gap * 0.25;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .navbar > .container {
+    max-width: $desktop;
+  }
+}
+
+@media screen and (min-width: $widescreen) {
+  .navbar > .container {
+    max-width: $widescreen;
+  }
+}
+
+@media screen and (min-width: $fullhd) {
+  .navbar > .container {
+    max-width: $fullhd;
+  }
+}
+
+body {
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+a {
+  color: inherit;
+  /* text-decoration: underline; */
+  /* text-decoration-color: #1ba0ab; */
+}
+
+.content a:not(.button):hover {
+  text-decoration: underline !important;
+}
+
+a.highlight {
+  text-decoration: underline;
+}
+
+.is-primary {
+  background-color: $primary !important;
+}
+
+.is-primary-color {
+  color: $primary !important;
+}
+
+.input-range__track--active {
+  background-color: $secondary !important;
+}
+
+.input-range__slider {
+  background-color: $secondary !important;
+  border: 1px solid $secondary;
+}
+
+a,
+button {
+  &.is-primary:active,
+  &.is-primary:hover {
+    filter: brightness(110%);
+    color: #fff !important;
+  }
+}
+
+a,
+button {
+  font-weight: bold;
+}
+
+em {
+  background-color: $highlight;
+}
+
+.hero {
+  background-color: $bgbl-1;
+  padding-bottom: 2rem;
+  padding-top: 3rem;
+  color: white;
+  background-image: linear-gradient(
+    141deg,
+    $bgbl-2 0%,
+    $bgbl-1 60%,
+    $bgbl-3 100%
+  );
+}
+
+.hero-body {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+
+@media all and (max-width: $desktop) {
+  .hero-body {
+    padding-top: 0rem !important;
+    // padding-bottom: 10rem !important;
+    margin-bottom: 10rem !important;
+  }
+}
+
+.hero-image-column {
+  position: relative;
+  text-align: center;
+}
+
+.hero-image-wrapper {
+  position: absolute;
+  text-align: center;
+  width: 95%;
+}
+
+.hero-image {
+  box-shadow: rgba(0, 0, 0, 0.3) 1px -2px 8px 1px;
+  transition: 1s ease-in-out;
+  transform: rotate(3deg) translateY(-10px);
+}
+
+.section-info {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.section-comparison {
+  position: relative;
+  background-color: #fff;
+}
+
+.section-action {
+  position: relative;
+  background-image: linear-gradient(
+    141deg,
+    $bgbl-2 0%,
+    $bgbl-1 60%,
+    $bgbl-3 100%
+  );
+  color: white;
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+}
+
+.cell-label {
+  display: none;
+}
+
+@media all and (max-width: 530px) {
+  thead {
+    display: none;
+  }
+  table,
+  tbody,
+  tr {
+    display: block;
+  }
+  td {
+    display: flex;
+  }
+  td:first-child {
+    font-weight: bold;
+  }
+  .cell-label {
+    display: block;
+    float: left;
+    width: 50%;
+    padding-right: 0.5em;
+  }
+  .cell-label:after {
+    content: ': ';
+  }
+  .cell-content {
+    float: right;
+    width: 50%;
+  }
+}
+
+.page-number {
+  color: black;
+  background: rgba(255, 255, 255, 0.8);
+  padding-top: 52px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.page-number-no {
+  padding: 0 0.5rem;
+  width: 25%;
+}
+
+.page-number-label-large {
+  display: none;
+}
+
+@media all and (min-width: 768px) {
+  .page-number-label-large {
+    display: inline;
+  }
+
+  .page-number-label-small {
+    display: none;
+  }
+}
+
+.page-number-title {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding-right: 0.5rem;
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    text-overflow: 0;
+    white-space: normal;
+  }
+}
+
+.dina4 {
+  position: relative;
+  width: 100%;
+}
+
+.dina4-ratio {
+  padding-bottom: 141.42135624%;
+}
+
+.dina4-ratio > div {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.input-range__label-container {
+  background-color: #fff;
+}
+
+.card {
+  display: block;
+  height: 100%;
+}
+
+.year {
+  background-color: #fff;
+}
+
+.year-bounce {
+  animation: colorchange 0.2s linear;
+}
+
+@keyframes colorchange {
+  0% {
+    background: white;
+  }
+  50% {
+    background: linear-gradient(#fff, #eee, #fff);
+  }
+  100% {
+    background: white;
+  }
+}
+
+#information {
+  a {
+    &:hover,
+    &:active {
+      color: white;
+    }
+  }
+
+  h4 {
+    color: white;
+  }
+}
+
+.content.recent ul,
+.no-margin {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+// make form fields wrap if needed
+.field.is-grouped {
+  flex-wrap: wrap;
+}
+
+@media all and (max-width: $tablet) {
+  .pricing-table > h3,
+  .pricing-title {
+    text-align: center !important;
+  }
+}
